@@ -6,3 +6,6 @@ test.o: test.c
 
 userfs.o: userfs.c
 	gcc -c userfs.c -o userfs.o
+
+clean:
+	rm -f test.o userfs.o
