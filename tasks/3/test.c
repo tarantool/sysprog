@@ -263,7 +263,7 @@ test_rights(void)
 	unit_fail_if(ufs_close(fd) != 0);
 
 	fd = ufs_open("file", UFS_WRITE_ONLY);
-	unit_check(fd != -1, "opened with 'write only");
+	unit_check(fd != -1, "opened with 'write only'");
 	unit_check(ufs_read(fd, buf2, sizeof(buf2)) == -1, "can not read");
 	unit_check(ufs_errno() == UFS_ERR_NO_PERMISSION, "errno is set");
 	char *buf3 = "new data which rewrites previous";
@@ -272,7 +272,7 @@ test_rights(void)
 	unit_fail_if(ufs_close(fd));
 
 	fd = ufs_open("file", UFS_READ_WRITE);
-	unit_check(fd != -1, "opened with 'read write");
+	unit_check(fd != -1, "opened with 'read write'");
 	unit_check(ufs_read(fd, buf2, sizeof(buf2)) == buf3_size, "can read");
 	unit_check(memcmp(buf2, buf3, buf3_size) == 0, "data is correct");
 	unit_check(ufs_write(fd, buf1, buf1_size) == buf1_size, "can write");
